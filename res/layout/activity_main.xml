@@ -19,7 +19,7 @@
         android:background="@color/dark_gray"
         android:ems="2"
         android:inputType="number"
-        android:onClick="cet1" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -32,7 +32,7 @@
         android:background="@color/dark_gray"
         android:ems="2"
         android:inputType="number"
-        android:onClick="cet2" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -44,9 +44,8 @@
         android:layout_toRightOf="@+id/editText2"
         android:background="@color/dark_gray"
         android:ems="4"
-        android:inputType="number" 
-        android:onClick="cet3" />
-
+        android:inputType="number"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText4"
@@ -57,8 +56,8 @@
         android:layout_marginTop="14dp"
         android:background="@color/dark_gray"
         android:ems="2"
-        android:inputType="number" 
-        android:onClick="cet4"/>
+        android:inputType="number"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText5"
@@ -71,7 +70,7 @@
         android:background="@color/dark_gray"
         android:ems="2"
         android:inputType="number"
-        android:onClick="cet5" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText6"
@@ -82,7 +81,7 @@
         android:background="@color/dark_gray"
         android:ems="4"
         android:inputType="number"
-        android:onClick="cet6" />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button1"
@@ -199,6 +198,26 @@
         android:onClick="cb0"
         android:text="0" />
 
+    <Button
+        android:id="@+id/button11"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button7"
+        android:layout_below="@+id/button10"
+        android:layout_marginTop="39dp"
+        android:layout_toLeftOf="@+id/listView1"
+        android:minHeight="70dp"
+        android:onClick="saveWP"
+        android:text="Save waypoint" />
 
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_marginLeft="38dp"
+        android:layout_toRightOf="@+id/button3" >
+    </ListView>
 
 </RelativeLayout>
