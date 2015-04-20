@@ -9,19 +9,6 @@
     tools:context="com.example.wp.MainActivity" >
 
     <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/dark_gray"
-        android:ems="2"
-        android:inputType="number"
-        android:textSize="30sp" />
-
-    <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,18 +69,6 @@
         android:ems="4"
         android:inputType="number"
         android:textSize="30sp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_below="@+id/editText4"
-        android:layout_marginTop="88dp"
-        android:minHeight="70dip"
-        android:minWidth="140dip"
-        android:onClick="cb1"
-        android:text="1" />
 
     <Button
         android:id="@+id/button2"
@@ -198,6 +173,40 @@
         android:onClick="cb0"
         android:text="0" />
 
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button11"
+        android:layout_alignTop="@+id/editText6"
+        android:layout_marginLeft="38dp"
+        android:layout_toRightOf="@+id/button3" >
+    </ListView>
+
+    <Button
+        android:id="@+id/button12"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText3"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignRight="@+id/listView1"
+        android:layout_marginRight="25dp"
+        android:onClick="click_clearallwp"
+        android:text="ClearAll" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText4"
+        android:layout_below="@+id/editText4"
+        android:layout_marginTop="22dp"
+        android:minHeight="70dip"
+        android:minWidth="140dip"
+        android:onClick="cb1"
+        android:text="1" />
+
     <Button
         android:id="@+id/button11"
         style="?android:attr/buttonStyleSmall"
@@ -205,19 +214,24 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button7"
         android:layout_below="@+id/button10"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="23dp"
         android:layout_toLeftOf="@+id/listView1"
         android:minHeight="70dp"
         android:onClick="saveWP"
         android:text="Save waypoint" />
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText3"
-        android:layout_marginLeft="38dp"
-        android:layout_toRightOf="@+id/button3" >
-    </ListView>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/dark_gray"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="30sp" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

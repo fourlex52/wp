@@ -7,6 +7,7 @@ import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -116,27 +117,6 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 		addText("9");
 	}
 	
-	/*
-	public void cet1(View view){
-		clearText(0);
-	}
-	public void cet2(View view){
-		clearText(1);
-	}
-	public void cet3(View view){
-		clearText(2);
-	}
-	public void cet4(View view){
-		clearText(3);
-	}
-	public void cet5(View view){
-		clearText(4);
-	}
-	public void cet6(View view){
-		clearText(5);
-	}
-	*/
-	
 	public void maxLength(){
 
 		array.get(0).setFilters(new InputFilter[] {new InputFilter.LengthFilter(lenDegLat)});
@@ -145,13 +125,6 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 		array.get(3).setFilters(new InputFilter[] {new InputFilter.LengthFilter(lenDegLon)});
 		array.get(4).setFilters(new InputFilter[] {new InputFilter.LengthFilter(lenMin)});
 		array.get(5).setFilters(new InputFilter[] {new InputFilter.LengthFilter(lenDecMin)});
-		
-				
-		/*EditText editText = new EditText(this);
-		int maxLength = 3;    
-		editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
-		*/
-
 	}
 	
  	public void addText(String text){
@@ -160,8 +133,6 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 		text = txt+text;
 		array.get(i).setText(text);
 		cnt++;
-		
-		
 		
 		if ((i==0) && (cnt==lenDegLat)){
 			array.get(i+1).requestFocus();
@@ -183,38 +154,6 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 			i++;
 			cnt=0;
 		}
-		
-/*
- 		String str = array.get(i).getText().toString();
- 		i++;
- 		switch(i){
- 		case lenDegLat:
- 			array.get(j).requestFocus();
- 			break;
- 		case lenMin:
- 			array.get(j).requestFocus();
- 			break;
- 		case lenDecMin:
- 			array.get(j).requestFocus();
- 			break;
- 		case lenDegLon:
- 			array.get(j).requestFocus();
- 			break;
- 		}
- 		
- 		
- 			n=7; //устанавливает точность координат. может быть 7 или 8
- 			if (cnt==2 || cnt==4 || cnt==n || cnt==n+2 || cnt==n+4) {
- 	 			j++;
- 	 			array.get(j).requestFocus();
- 	 		}
- 			View edText = this.getCurrentFocus();
- 			String txt = ((EditText) edText).getText().toString();
- 		 	text = txt+text;
- 		 	((TextView) edText).setText(text);
- 		 	cnt++;
- 		 */	
- 		 	
  	}
 
  	public void clearText(int j){
@@ -227,14 +166,6 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
  				break;
  			}
  		}
- 		/*
- 		View edText = this.getCurrentFocus();
- 		((TextView) edText).setText(null);
- 		edText.requestFocus();
- 		/*
- 		array.get(j).setText(null);
- 		array.get(j).requestFocus();
- 		*/
  		cnt=0;
  	}
  	
@@ -253,6 +184,9 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
         //устанавливаем массив в ListView
         listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arr));
         listView.setTextFilterEnabled(true);
+        
+        array.get(0).requestFocus();
+        i=0;
  	}
     public void clear_edText () {
         for (EditText elm : array) {
@@ -295,30 +229,27 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 	public void beforeTextChanged(CharSequence s, int start, int count,
 			int after) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void afterTextChanged(Editable s) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public boolean onTouch(View v, MotionEvent event) {
+	public boolean onTouch(View view, MotionEvent event) {
 		if( event.getAction() == MotionEvent.ACTION_DOWN){
-			
-			View edText = this.getCurrentFocus();
-	 		for (i=0; i<7; i++){
-	 			if (array.get(i)==edText){
+		
+	 		for (i=0; i<6; i++){
+	 			if (array.get(i).getId()==view.getId()){
 	 				array.get(i).setText(null);
 	 		 		array.get(i).requestFocus();
+	 		 		cnt=0;
 	 				break;
 	 			}
 	 		}
@@ -329,6 +260,5 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		Log.e("","yes_two");
 	}
 }
