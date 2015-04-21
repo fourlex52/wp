@@ -35,7 +35,10 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		/*
+		 * setContentView(R.layout.activity_main);
+		 */
+		setContentView(R.layout.test);
 		
 		array=new ArrayList<EditText>(6);
 		
@@ -187,6 +190,7 @@ public class MainActivity extends Activity implements TextWatcher, OnTouchListen
         
         array.get(0).requestFocus();
         i=0;
+        cnt=0;
  	}
     public void clear_edText () {
         for (EditText elm : array) {
